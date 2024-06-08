@@ -5,6 +5,7 @@ go 1.21.6
 require (
 	github.com/gofrs/uuid v4.4.0+incompatible
 	github.com/jackc/pgx v3.6.2+incompatible
+	golang.org/x/mod v0.17.0
 )
 
 require (

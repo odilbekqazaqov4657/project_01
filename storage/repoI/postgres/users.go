@@ -4,6 +4,7 @@ import (
 	"app/models"
 	repoi "app/storage/repoI"
 	"context"
+	"log"
 
 	"github.com/jackc/pgx"
 )
@@ -22,6 +23,32 @@ func NewUserRepo(conn *pgx.Conn) repoi.UserRepoI {
 }
 
 func (u *UserRepo) CreateUser(ctx context.Context, user models.User) error {
+
+	query := `
+	INSERT INTO 
+		users(
+			user_id,
+			fullname,
+			username,
+			gmail,
+			password
+		) VALUES (
+			$1,$2,$3,$4,$5
+		)`
+
+	_, err := u.conn.Exec(
+		ctx, query,
+		user.UserId,
+		user.Fullname,
+		user.Username,
+		user.Gmail,
+		user.Password,
+	)
+
+	if err != nil {
+		log.Println("error on executing !!!", err)
+		return err
+	}
 	return nil
 }
 

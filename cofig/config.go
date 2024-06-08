@@ -16,7 +16,7 @@ func NewConfig() Config {
 	cfg.DbPassword = "postgres"
 	cfg.DbHost = "0.0.0.0"
 	cfg.DbPort = 5432
-	cfg.DbName = "postgres"
+	cfg.DbName = "todo"
 
 	return cfg
 

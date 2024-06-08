@@ -1,8 +1,6 @@
 package handlers
 
 import (
-	repoi "app/storage/repoI"
-
 	"golang.org/x/mod/sumdb/storage"
 )
 

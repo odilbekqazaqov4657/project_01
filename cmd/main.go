@@ -1,9 +1,9 @@
 package main
 
 import (
+	api "app/api/handlers"
 	config "app/cofig"
 	"app/pkg/db"
-	"fmt"
 	"log"
 )
 
@@ -21,6 +21,9 @@ func main() {
 	}
 
 	log.Println("successfully connected to db")
-	fmt.Println(con)
+
+	storage := storage.NewStorage(con)
+
+	api.Api(storage)
 
 }
