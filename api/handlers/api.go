@@ -3,7 +3,7 @@ package api
 import (
 	"app/api/handlers"
 
-	"app/storage"
+	"golang.org/x/mod/sumdb/storage"
 )
 
 func Api(storage storage.StorageI) {
@@ -11,5 +11,4 @@ func Api(storage storage.StorageI) {
 	h := handlers.NewHandlers(storage)
 
 	h.CreateUser()
-
 }
